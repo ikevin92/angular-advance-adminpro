@@ -4,7 +4,7 @@ import { NotPageFoundComponent } from './not-page-found/not-page-found.component
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     loadChildren: () =>
       import('./pages/pages.module').then((m) => m.PagesModule),
   },
@@ -12,6 +12,7 @@ export const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', component: NotPageFoundComponent },
 ];
 
