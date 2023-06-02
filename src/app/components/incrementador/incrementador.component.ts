@@ -1,28 +1,44 @@
-import { Component, computed, signal } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  computed,
+  signal,
+} from '@angular/core';
 
 @Component({
   selector: 'app-incrementador',
   templateUrl: './incrementador.component.html',
   styleUrls: ['./incrementador.component.css'],
 })
-export class IncrementadorComponent {
-  progreso = signal<number>(50);
-  porcentaje = computed(() => `${this.progreso()}%`);
+export class IncrementadorComponent implements OnInit {
+  @Input('valor') progresoInput: number = 50;
+  progreso = signal<number>(0);
+
+  @Output() valorSalida: EventEmitter<number> = new EventEmitter();
+
+  ngOnInit(): void {
+    this.progreso.set(this.progresoInput);
+  }
 
   cambiarValor(valor: number) {
     if (this.progreso() >= 100 && valor >= 0) {
+      this.valorSalida.emit(100);
       return this.progreso.set(100);
     }
 
     if (this.progreso() <= 0 && valor < 0) {
+      this.valorSalida.emit(0);
       return this.progreso.set(0);
     }
 
     this.progreso.update((value) => value + valor);
+    this.valorSalida.emit(this.progreso());
   }
 
   onFieldUpdated(value: string) {
-    console.log(value);
     this.progreso.set(Number(value));
   }
 }

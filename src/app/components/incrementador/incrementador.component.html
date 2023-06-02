@@ -9,8 +9,8 @@
     class="form-control"
     placeholder="Progreso"
     #inputProgreso
-    (input)="onFieldUpdated(inputProgreso.value)"
-    [value]="progreso()"
+    (change)="onFieldUpdated(inputProgreso.value)"
+    [ngModel]="progreso()"
   />
   <span class="input-group-btn">
     <button (click)="cambiarValor(+5)" class="btn btn-primary" type="button">
