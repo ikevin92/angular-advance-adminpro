@@ -8,11 +8,11 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/pages.module').then((m) => m.PagesModule),
   },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: 'auth',
+    path: '',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', component: NotPageFoundComponent },
 ];
 
