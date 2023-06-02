@@ -7,6 +7,7 @@ import { PageRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
 import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,13 @@ import { FormsModule } from '@angular/forms';
     Grafica1Component,
     PagesComponent,
   ],
-  imports: [CommonModule, SharedModule, PageRoutingModule, FormsModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    PageRoutingModule,
+    FormsModule,
+    ComponentsModule,
+  ],
   exports: [
     DashboardComponent,
     ProgressComponent,
