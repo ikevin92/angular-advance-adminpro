@@ -11,6 +11,7 @@ import { PageRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
 import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PromesasComponent } from './promesas/promesas.component';
     PagesComponent,
     AccountSettingsComponent,
     PromesasComponent,
+    RxjsComponent,
   ],
   imports: [
     CommonModule,
