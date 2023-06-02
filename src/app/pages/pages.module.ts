@@ -10,6 +10,7 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 import { PageRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
+import { PromesasComponent } from './promesas/promesas.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProgressComponent } from './progress/progress.component';
     Grafica1Component,
     PagesComponent,
     AccountSettingsComponent,
+    PromesasComponent,
   ],
   imports: [
     CommonModule,
