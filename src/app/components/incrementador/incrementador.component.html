@@ -6,6 +6,7 @@
   </span>
   <input
     type="number"
+    [ngClass]="{ 'is-invalid': progreso() > 100 || progreso() < 0 }"
     class="form-control"
     placeholder="Progreso"
     #inputProgreso
