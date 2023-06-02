@@ -40,7 +40,10 @@ export class IncrementadorComponent implements OnInit {
     this.valorSalida.emit(this.progreso());
   }
 
-  onFieldUpdated(value: string) {
-    this.progreso.set(Number(value));
+  onChange(nuevoValor: number) {
+    this.progreso.set(Number(nuevoValor));
+    if (nuevoValor >= 100) this.progreso.set(100);
+    if (nuevoValor <= 0) this.progreso.set(0);
+    this.valorSalida.emit(this.progreso());
   }
 }

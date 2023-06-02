@@ -9,7 +9,7 @@
     class="form-control"
     placeholder="Progreso"
     #inputProgreso
-    (change)="onFieldUpdated(inputProgreso.value)"
+    (ngModelChange)="onChange($event)"
     [ngModel]="progreso()"
   />
   <span class="input-group-btn">
