@@ -15,11 +15,13 @@ import {
 })
 export class IncrementadorComponent implements OnInit {
   @Input('valor') progresoInput: number = 50;
+  @Input() btnClass: string = 'btn-primary';
   progreso = signal<number>(0);
 
   @Output() valorSalida: EventEmitter<number> = new EventEmitter();
 
   ngOnInit(): void {
+    this.btnClass = `btn ${this.btnClass}`;
     this.progreso.set(this.progresoInput);
   }
 
